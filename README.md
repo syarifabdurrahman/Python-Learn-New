@@ -1,2 +1,6 @@
-# Python-Learn-New
-learn python
+# This is about what i learn
+
+- Fundamental
+- Loops
+- Data type's
+- In depth learn
