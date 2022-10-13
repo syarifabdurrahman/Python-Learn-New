@@ -3,4 +3,4 @@
 - Fundamental
 - Loops
 - Data type's
-- In depth learn
+- In depth learn ( to understand more )
