@@ -4,3 +4,4 @@
 - Loops
 - Data type's
 - In depth learn ( to understand more )
+- checking code http://reeborg.ca/
