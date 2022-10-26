@@ -1,6 +1,5 @@
 # coin operated
 # penny = .01, Dime =.10, Nickel = .05, Quarter = .25
-import math
 from coffee_data import MENU, resources
 
 money_report = 0
