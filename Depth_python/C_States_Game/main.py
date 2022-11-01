@@ -43,10 +43,11 @@ while len(correct_guesses) < total_state:
     answer_state = screen.textinput(
         title=f"Guess the states {count}/{total_state} ", prompt="What\'s the another state\'s name?").title()
     if answer_state == 'Exit':
-        missing_states = []
-        for state in state_list:
-            if state not in correct_guesses:
-                missing_states.append(state)
+        missing_states = [
+            state for state in state_list if state not in correct_guesses]
+        # for state in state_list:
+        #     if state not in correct_guesses:
+        #         missing_states.append(state)
         new_data = pandas.DataFrame(missing_states)
         new_data.to_csv(r'Depth_python\C_States_Game\missing_states.csv')
         break
