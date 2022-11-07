@@ -8,7 +8,16 @@ data_file_dict = {row.letter: row.code for (
 
 print(data_file_dict)
 
-user_input = input("Enter word: ").upper()
-phonetic_list = [data_file_dict[word]
-                 for word in user_input if word in data_file_dict]
-print(phonetic_list)
+
+def generate_phonetic():
+    user_input = input("Enter word: ").upper()
+    try:
+        phonetic_list = [data_file_dict[word]
+                         for word in user_input]
+    except KeyError:
+        print('Sorry, only letters in the alphabet please')
+    else:
+        print(phonetic_list)
+
+
+generate_phonetic()
