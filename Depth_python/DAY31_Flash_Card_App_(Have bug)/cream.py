@@ -6,6 +6,7 @@ import random
 FRONT_BG = r'Depth_python\DAY31_Flash_Card_App\images\card_front.png'
 BACK_BG = r'Depth_python\DAY31_Flash_Card_App\images\card_back.png'
 data_dict = {}
+
 # ---------------------------- Setup ------------------------------------ #
 
 try:
