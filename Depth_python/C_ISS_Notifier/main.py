@@ -59,11 +59,6 @@ print(time_now.hour)
 
 def can_see():
     global iss_latitude, iss_longitude, hour_now, lt_sunrise, lt_sunset
-    # p1 = [iss_longitude]
-    # p2 = [MY_LONG]
-
-    # position = math.dist(p1, p2)
-    # print(position)
 
     if MY_LAT + 5 >= iss_latitude or MY_LAT - 5 <= iss_latitude and hour_now >= lt_sunset or hour_now < lt_sunrise and MY_LONG + 5 >= iss_longitude or MY_LONG - 5 <= iss_longitude:
         return True
@@ -74,7 +69,10 @@ def can_see():
 # if the ISS close to my current position and its currently dark
 
 
-while True:
+while not response.raise_for_status():
+    time.sleep(60)
+
+    print('Adaw')
     if can_see():
         with smtplib.SMTP('smtp.gmail.com', port=587) as connection:
             connection.starttls()
@@ -82,7 +80,5 @@ while True:
             connection.sendmail(
                 from_addr=EMAIL,
                 to_addrs='bamnbang.id@gmail.com',
-                msg='Subject:Look up\n\nLook up the sky ISS is right above you!!'
+                msg='Subject:Look up\n\nLook up the sky ISS is above you this time!!'
             )
-
-    time.sleep(60)
