@@ -6,7 +6,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import ElementClickInterceptedException, NoSuchElementException, InvalidSelectorException
 from dotenv import load_dotenv
-import random
 import os
 import time
 
@@ -114,9 +113,8 @@ def start_working():
             action.click()
         except NoSuchElementException:
             try:
-                time.sleep(4)
                 action = driver.find_element(
-                    By.XPATH, '//*[@id="q888578821"]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[3]/div/div[4]/button')
+                    By.XPATH, '//*[@id = "q888578821"]/div/div[1]/div/main/div[1]/div/div/div[1]/div[1]/div/div[4]/div/div[4]/button')
                 action.click()
                 continue
             except ElementClickInterceptedException:
